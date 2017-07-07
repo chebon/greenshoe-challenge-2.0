@@ -26,14 +26,13 @@ func main() {
 
 //Connect to ActiveMQ and listen for messages
 func fetchQueue(c1 chan string) {
-  conn, err := stomp.Dial("tcp", "localhost:61613")
-  if err != nil {
-    fmt.Println(err)
-  }
+  activeMQAddress := os.Args[4]
+  conn, err := stomp.Dial("tcp", activeMQAddress)
+  checkErr(err)
 
   sub, err := conn.Subscribe("/queue/greenshoe", stomp.AckAuto)
   checkErr(err)
-  for n := 0; n <= 79; n++ {
+  for n := 1; n <= 80; n++ {
     fmt.Println(n)
     msg := <-sub.C
     entry := string(msg.Body)+"\n"

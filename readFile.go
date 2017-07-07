@@ -66,7 +66,8 @@ func stringProcessor(str string){
 	}
 
 	func insertTOActiveMQ(c2 chan string, data []string){
-		conn, err := stomp.Dial("tcp", "localhost:61613")
+		activeMQAddress := os.Args[5]
+		conn, err := stomp.Dial("tcp", activeMQAddress)
 		checkErr(err)
 		go Producer(c2, conn, data)
 	}
