@@ -1,6 +1,6 @@
 Final Solution
 =======================
-This solution was build with Golang. Mysql database is my prefred database choice
+This solution was build with Golang. Mysql database is my preferred database choice
 
 To generate a datafile (part 0):
 ```
@@ -8,13 +8,13 @@ To generate a datafile (part 0):
 ```
 This will generate a data.csv file 
 
-Reading from file:
+Reading from file: (part 1)
 ```
 ./readFile   <filename mysqluser mysqlpassword mysqldatabase activeMQAddress>
 ```
 This program will read file then connect to mysql and activemq and insert values concurrently
 
-Reading from database and message broker:
+Reading from database and message broker: (part 2)
 ```
 ./readDatabase <mysqluser mysqlpassword mysqldatabase activeMQAddress>
 ```
