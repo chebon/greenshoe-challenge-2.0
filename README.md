@@ -30,4 +30,4 @@ This program will connect to mysql and activemq concurrently then generate files
   "data-3.csv" with entry records from from activeMQ
   
   
-Wow this challange was fun. Best so far ;)
+Wow this challenge was fun. Best so far ;-)
